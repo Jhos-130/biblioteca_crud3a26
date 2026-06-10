@@ -14,4 +14,4 @@ class Prestamo:
         self.libro.devolver()
 
     def mostrar_info(self):
-        return f"Prestamo ID: {self.id_prestamo}, Usuario: {self.usuario.nombre}, Libro: {self.libro.titulo}, Fecha de Prestamo: {self.fecha_prestamo}, Fecha de Devolucion: {self.fecha_devolucion}, Devuelto: {'Si' if self.devuelto else 'No'}"
+        return f"Prestamo ID: {self.id_prestamo}, Usuario: {self.usuario.nombre}, Libro: {self.libro.titulo}, Fecha de Prestamo: {self.fecha_prestamo}, Fecha de Devolucion: {self.fecha_devolucion},Devuelto: {'Si' if self.devuelto else 'No'}"
