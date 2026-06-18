@@ -15,8 +15,8 @@ def main():
             for libro in libros:
                 print("-------------------------------")
                 print(
-                    f"ID: {libro.id}, Titulo: {libro.titulo}, "
-                    f"Autor: {libro.autor}, ISBN: {libro.isbn}, "
+                    f"ID: {libro.id}, Titulo: {libro.titulo},\n"
+                    f"Autor: {libro.autor}, ISBN: {libro.isbn},\n "
                     f"Disponible: {'Si' if libro.disponible else 'No'}"
                 )
                 print("-------------------------------")

@@ -13,7 +13,7 @@ class LibroDAO:
         cursor = conexion.cursor()
 
         cursor.execute("SELECT * FROM libro")
-        registros = cursor.fetchall
+        registros = cursor.fetchall()
 
         libros = []
         for registro in registros:
