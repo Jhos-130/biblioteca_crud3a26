@@ -11,8 +11,9 @@ class LibroDAO:
     def obtener_todos(self):
         conexion = Conexion.obtener_conexion()
         cursor = conexion.cursor()
+        
 
-        cursor.execute("SELECT * FROM libro")
+        cursor.execute("SELECT * FROM vista_libros")
         registros = cursor.fetchall()
 
         libros = []
@@ -33,8 +34,8 @@ class LibroDAO:
         conexion = Conexion.obtener_conexion()
         cursor = conexion.cursor()
         sql = """
-        INSERT INTO libro (titulo, autor, isbn, disponible)
-        VALUES (%s, %s, %s, %s)
+        INSERT INTO libro (id, titulo, autor, isbn, disponible)
+        VALUES (%s, %s, %s, %s, %s)
         """
 
         cursor.execute(
@@ -83,3 +84,17 @@ class LibroDAO:
         conexion.commit()
         cursor.close()
         conexion.close()
+
+    def obtener_ultimo_id(self):
+        conexion = Conexion.obtener_conexion()
+        cursor = conexion.cursor()
+
+        cursor.execute("SELECT id FROM libro ORDER BY id DESC")
+        resultado = cursor.fetchone()
+
+        cursor.close()
+        conexion.close()
+
+        if resultado is None:
+            return 0
+        return resultado[0]    
