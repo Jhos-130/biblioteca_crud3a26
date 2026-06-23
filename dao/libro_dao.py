@@ -37,13 +37,14 @@ class LibroDAO:
         INSERT INTO libro (id, titulo, autor, isbn, disponible)
         VALUES (%s, %s, %s, %s, %s)
         """
-
+        
         cursor.execute(
             sql,
-            (libro.titulo,
-             libro.autor,
-             libro.isbn,
-             libro.disponible)
+            (libro.id,
+            libro.titulo,
+            libro.autor,
+            libro.isbn,
+            libro.disponible)
         )
 
         conexion.commit()
