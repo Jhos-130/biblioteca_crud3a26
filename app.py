@@ -39,6 +39,23 @@ def insertar_libro():
         print("Error al insertar un nuevo libro")
         print(e)
     
+def actualizar_libro():
+    print("Selecciona el libro a actualizar ")
+    try:
+        libro_dao = LibroDAO()
+        ver_libros()
+        id = int(input("Escribe el id del libro a actualizar: "))
+        titulo = input("Escribe el nuevo titulo: ")
+        autor = input("Escribe el nuevo autor: ")
+        isbn = input("Escribe el nuevo ISBN: ")
+        disponible = bool(input("Escribe el nuevo valor de disponible: "))
+        libro = Libro(id, titulo, autor, isbn, disponible)
+        libro_dao.actualizar(libro)
+        print(f"El libro (id) se ha actualizado exitosamente")
+
+    except Exception as e:
+        print("Error al insertar un libro")
+        print(e)
 
 def main():
      print("=== BIBLIOTECA UNIVERSITARIA ===")
@@ -56,8 +73,8 @@ def main():
             insertar_libro()
         case 3:
             actualizar_libro()
-        case 4:
-            eliminar_libro()
+        #case 4:
+            #eliminar_libro()
         
     
 
