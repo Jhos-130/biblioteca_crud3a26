@@ -1,5 +1,4 @@
-class Ususario:
-
+class Usuario:
 
     def __init__(self, id_usuario, nombre, matricula, email, carrera):
         self.id_usuario = id_usuario
@@ -9,10 +8,10 @@ class Ususario:
         self.carrera = carrera
         self.activo = True
 
-    def activar(self):
+    def desactivar(self,): 
         self.activo = True
 
-    def desactivar(self):
+    def activar(self):
         self.activo = False
 
     def mostrar_info(self):
