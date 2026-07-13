@@ -1,3 +1,6 @@
+import flet as ft
+
+from ui.main_window import main_window
 from dao.libro_dao import LibroDAO
 from models.libro import Libro
 from dao.usuario_dao import UsuarioDAO
@@ -135,41 +138,41 @@ def eliminar_usuario():
         print(f"Error al eliminar el usuario")
         print(e)
 
+ft.app(target = main_window)
 
+# def main():
+#     print("=== BIBLIOTECA UNIVERSITARIA ===")
+#     print("Menu de opciones")
+#     print("1. Ver todos los libros")
+#     print("2. Insertar un nuevo libro")
+#     print("3. Actualizar un libro disponible")
+#     print("4. Eliminar u libro disponible")
+#     print("5. Ver todos los usuarios")       
+#     print("6. Insertar un nuevo usuario")    
+#     print("7. Actualizar un usuario")         
+#     print("8. Eliminar un usuario")           
+#     opcion = int(input("Selecciona una opcion (1-8): "))
 
-def main():
-    print("=== BIBLIOTECA UNIVERSITARIA ===")
-    print("Menu de opciones")
-    print("1. Ver todos los libros")
-    print("2. Insertar un nuevo libro")
-    print("3. Actualizar un libro disponible")
-    print("4. Eliminar u libro disponible")
-    print("5. Ver todos los usuarios")       
-    print("6. Insertar un nuevo usuario")    
-    print("7. Actualizar un usuario")         
-    print("8. Eliminar un usuario")           
-    opcion = int(input("Selecciona una opcion (1-8): "))
-
-    match opcion:
-        case 1:
-            ver_libros()
-        case 2:
-            insertar_libro()
-        case 3:
-            actualizar_libro()
-        case 4:
-            eliminar_libro()
-        case 5:
-            ver_usuarios()
-        case 6:
-            insertar_usuario()  
-        case 7:
-            actualizar_usuario()  
-        case 8:
-            eliminar_usuario()
+#     match opcion:
+#         case 1:
+#             ver_libros()
+#         case 2:
+#             insertar_libro()
+#         case 3:
+#             actualizar_libro()
+#         case 4:
+#             eliminar_libro()
+#         case 5:
+#             ver_usuarios()
+#         case 6:
+#             insertar_usuario()  
+#         case 7:
+#             actualizar_usuario()  
+#         case 8:
+#             eliminar_usuario()
     
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
 
