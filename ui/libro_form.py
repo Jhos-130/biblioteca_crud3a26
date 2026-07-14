@@ -21,6 +21,25 @@ def libro_form():
         color = ft.Colors.GREEN
     )
 
+    def guardar_libro(e):
+        #Recupera los valores de los TextField
+        titulo = titulo_input.value
+        autor = autor_input.value
+        isbn = isbn_input.value
+
+        if titulo == "" or autor == "" or isbn == "":
+            mensaje.value = "   Todos los campos son obligatorios"
+            mensaje.color = ft.Colors.RED
+        else:
+            mensaje.value = f"Libro '(titulo)' listo para insertar"
+            print(f"Titulo: '(titulo)', Autor: '(autor)', ISBN: '(isbn)'")
+            mensaje.color = ft.Colors.GREEN
+            titulo_input.value = ""
+            autor_input.value = ""
+            isbn_input.value = ""
+
+        e.page.update()
+
     return ft.Container(
         padding = 30,
         content = ft.Column(
@@ -43,8 +62,12 @@ def libro_form():
                 
                 ft.ElevatedButton(
                     "Refistrar libro",
-                    icon = ft.Icons.SAVE
-                )
+                    icon = ft.Icons.SAVE,
+                    on_click = guardar_libro
+                ),
+
+                mensaje
+
             ],
             spacing = 15
         )
